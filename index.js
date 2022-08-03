@@ -1,4 +1,4 @@
-const { NUMBERS, HUNDREDS_GROUPER, GROUP_NAMES, toPlural, normalize } = require("./numericInfo");
+const { NUMBERS, HUNDREDS_GROUPER, GROUP_NAMES, CONJUNCTION, toPlural, normalize } = require("./numericInfo");
 
 const reduceWithSuffixes = (string, item, index, { length }) => {
     if (!item) {
@@ -24,7 +24,7 @@ const translateHundreds = (hundredGroup) => {
        extendedNames.push(NUMBERS.UNITS[digits[2]]);
    }
 
-   return extendedNames.filter((item) => item.length > 0).join(' e ');
+   return extendedNames.filter((item) => item.length > 0).join(` ${CONJUNCTION} `);
 }
 
 const getIntNumberInFull = (number = 0) => {

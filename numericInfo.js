@@ -53,6 +53,8 @@ const HUNDREDS = Object.freeze({
 
 const ZERO = "zero";
 
+const CONJUNCTION = 'e'
+
 const NUMBERS = Object.freeze({ UNITS, TEN_DIGITS, DOZENS, HUNDREDS, ZERO });
 
 // O inteiro máximo só vai até a casa dos quatrilhões
@@ -75,6 +77,7 @@ module.exports = {
     NUMBERS,
     HUNDREDS_GROUPER,
     GROUP_NAMES,
+    CONJUNCTION,
     toPlural,
     normalize,
 }
