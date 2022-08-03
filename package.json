@@ -1,0 +1,12 @@
+{
+  "name": "numero_extenso",
+  "version": "1.0.0",
+  "description": "Recebe um número e retorna o valor em extenso dele",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Hilson A. W. Jr.",
+  "license": "MIT"
+}
