@@ -64,14 +64,15 @@ const toPlural = (group) => {
     return group.replace('ão', 'ões');
 }
 
-const normalize = (stringNumber) => {
-    const hundreds = Object.values(HUNDREDS).filter((item) => item.length).join('|')
+const hundredsRegex = Object.values(HUNDREDS).filter((item) => item.length).join('|')
 
+
+const normalize = (stringNumber) => {
     return stringNumber
         .replaceAll(/cem(?= e)/g, "cento")
         .replace(/um (?=mil)/, "")
-        .replace(new RegExp(`mil(?! (${hundreds}))(?= \\w+)`), "mil e")
-        .replace(new RegExp(`mil(?= (${hundreds})$)`), "mil e");
+        .replace(new RegExp(`mil(?! (${hundredsRegex}))(?= \\w+)`), "mil e")
+        .replace(new RegExp(`mil(?= (${hundredsRegex})$)`), "mil e");
 }
 
 module.exports = {
