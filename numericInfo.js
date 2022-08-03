@@ -65,12 +65,13 @@ const toPlural = (group) => {
 }
 
 const normalize = (stringNumber) => {
-    const hundreds = Object.values(HUNDREDS).join('|')
+    const hundreds = Object.values(HUNDREDS).filter((item) => item.length).join('|')
+
     return stringNumber
         .replaceAll(/cem(?= e)/g, "cento")
         .replace(/um (?=mil)/, "")
-        .replace(new RegExp(`mil(?= ${hundreds}$)`), "mil e")
-        .replace(new RegExp(`mil(?! ${hundreds})(?= \w+)`), "mil e");
+        .replace(new RegExp(`mil(?! (${hundreds}))(?= \\w+)`), "mil e")
+        .replace(new RegExp(`mil(?= (${hundreds})$)`), "mil e");
 }
 
 module.exports = {

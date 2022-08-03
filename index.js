@@ -18,7 +18,7 @@ const translateHundreds = (hundredGroup) => {
 
    extendedNames.push(NUMBERS.HUNDREDS[digits[0]]);
    if (digits[1] === '1') {
-       extendedNames.push(NUMBERS.TEN_DIGITS[hundredGroup.slice(1)]);
+       extendedNames.push(NUMBERS.TEN_DIGITS[hundredGroup.slice(-2)]);
    } else {
        extendedNames.push(NUMBERS.DOZENS[digits[1]]);
        extendedNames.push(NUMBERS.UNITS[digits[2]]);
@@ -40,4 +40,15 @@ const getIntNumberInFull = (number = 0) => {
     return stringNumber || NUMBERS.ZERO;
 }
 
-console.log(getIntNumberInFull(Infinity));
+console.log(getIntNumberInFull(1101));
+console.log(getIntNumberInFull(9020389));
+console.log(getIntNumberInFull(40506070));
+console.log(getIntNumberInFull(6070));
+console.log(getIntNumberInFull(2222222));
+console.log(getIntNumberInFull(17300));
+console.log(getIntNumberInFull(2099));
+console.log(getIntNumberInFull(00000));
+console.log(getIntNumberInFull(0));
+console.log(getIntNumberInFull(5));
+console.log(getIntNumberInFull(15));
+console.log(getIntNumberInFull(Number.MAX_SAFE_INTEGER));
